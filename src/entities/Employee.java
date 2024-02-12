@@ -11,7 +11,20 @@ public class Employee {
     }
 
     public void increaseSalary(double porcentage){
-        System.out.print(((this.netSalary() / 100) * porcentage) + netSalary());
+        double r = ((this.grossSalary / 100) * porcentage) + this.grossSalary ;
+    }
+
+    public String toString(){
+        return "\nNome: " + this.name +
+                "\n" +
+                "Salário: " + this.grossSalary +
+                "\n" +
+                "Taxa: " + this.tax +
+                "\n" +
+                "\n \n" +
+                "Funcionário: " + this.name + ", " + netSalary();
+
+
     }
 
 

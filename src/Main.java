@@ -35,6 +35,7 @@
 import entities.Employee;
 
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -46,8 +47,6 @@ public class Main {
         Employee employee;
         employee = new Employee();
 
-        String aumento = "N";
-
         System.out.println("Entre com os dados de funcionário");
         System.out.println("Nome do Funcionário: ");
         employee.name = sc.next();
@@ -58,6 +57,22 @@ public class Main {
         System.out.print("Qual o valor do imposto? ");
         employee.tax = sc.nextDouble();
 
+        System.out.println(employee.toString());
+
+        System.out.println("Deseja dar aumento para o funciário " + employee.name + " ? Y/N");
+        String aumento = sc.next();
+
+        while(Objects.equals(aumento, "y") || Objects.equals(aumento, "Y")){
+            System.out.print("Qunatos porcento o funcionário " + employee.name + " vai receber?" );
+            double p = sc.nextDouble();
+            employee.increaseSalary(p);
+            aumento = "N";
+
+            System.out.println("\nSalário atualizado!");
+        }
+
+
+        System.out.println(employee.toString());
 
 
 
