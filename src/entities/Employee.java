@@ -3,15 +3,17 @@ package entities;
 public class Employee {
     public String name;
     public double grossSalary;
+    public double salaryUpdate;
     public double tax;
 
 
     public double netSalary(){
-        return this.grossSalary -= this.tax;
+        return this.salaryUpdate = this.grossSalary - this.tax;
     }
 
     public void increaseSalary(double porcentage){
-        double r = ((this.grossSalary / 100) * porcentage) + this.grossSalary ;
+        grossSalary = ((this.grossSalary / 100) * porcentage) + this.grossSalary ;
+
     }
 
     public String toString(){
